@@ -1,0 +1,24 @@
+ul - unordered list
+
+*
+*
+*
+
+homogenous list
+same kind -todos
+
+ol - ordered list
+
+1.
+2.
+3.
+
+li - list item
+
+<ul>
+<li> </li>
+</ul>
+
+<ol>
+<li> </li>
+</ol>

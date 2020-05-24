@@ -1,0 +1,88 @@
+body{
+  max-width: 1000px;
+
+}
+.Todopage-title{
+  max-width: 129px;
+  max-height: 27px;
+  margin-left: 327px;
+  margin-top: 60px;
+  color: #453c52;
+  letter-spacing: 0.14px;
+  font-size: 20px;
+
+}
+.AddTodo-text{
+  padding-left: 12px;
+  padding-top: auto;
+  padding-bottom: auto;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: #BFB8CC;
+  margin-left: 324px;
+  max-height: 32px;
+
+}
+.AddTodo-date{
+  margin-left: 10px;
+  max-height: 32px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: #BFB8CC;
+}
+.AddTodo-button{
+  background-color: #48BB78;
+  max-height: 32px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: #BFB8CC;
+  margin-left: 11px;
+
+}
+
+.TodoSectionTitle-text{
+  max-width: 100px;
+  font-size: 14px;
+  max-height: 19px;
+  margin-left: 328px;
+  margin-top: 24px;
+  line-height: 19px;
+  color: #453c52;
+  letter-spacing: 0.1px;
+}
+.TodoSectionTitle-remainingCount{
+  margin-left: 30px;
+  max-width: 19px;
+  max-height: 17px;
+  font-size: 12px;
+  line-height: 17px;
+  margin-top: 26px;
+  color: #453c52;
+}
+.TodoItem-checkbox{
+  margin-left: 347px;
+  max-width: 16px;
+  max-height: 16px;
+  border-radius: 4px;
+  border-color: #BFB8CC;
+  border-style: solid;
+  margin-top: 10px;
+
+
+}
+.TodoItem-overdueLabel{
+  color: #c53030;
+  max-width: 49px;
+  max-height:17px;
+  margin-left: 10px;
+  font-size: 12px;
+  align-self: center;
+}
+.image1{
+  margin-left: 21.2px;
+  align-self: center;
+}
+.text{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
