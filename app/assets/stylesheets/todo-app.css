@@ -66,12 +66,10 @@ body{
 
 
 }
-.TodoItem-overdueLabel{
-  color: #c53030;
-
+.TodoItem-dueDate{
+  font-size: 10px;
+  color: rgb(81, 16, 180);
   margin-left: 10px;
-  font-size: 12px;
-  align-self: center;
 }
 .image1{
   margin-left: 21.2px;
