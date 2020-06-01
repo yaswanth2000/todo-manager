@@ -1,24 +1,36 @@
-<section class="Todo-section">
-  <div class="TodoSectionTitle" style="display:flex;">
-    <h2 class="TodoSectionTitle-text"><%= section_title %></h2>
-    <p class="TodoSectionTitle-remainingCount"><%= todos.completed.count %> /<%= todos.count %></p>
-  </div>
-  <ul>
-    <% todos.each do |todo|%>
-     <li class="TodoItem">
-        <div class="TodoItem-container" style="display:flex;">
-          <input class="TodoItem-checkbox" type="checkbox">
-          <p class="text">
-          <%= todo.todo_text %>
-          <% if show_due_date %>
-          <p class="TodoItem-dueDate"><%= todo.due_date.to_s(:short) %></p>
-          <% end %>
-          </p>
+<section class=TodoSection>
+   <div class="TodoSectionTitle">
+      <p class="TodoSectionTitle-text"> <%= section_title %>  </p>
+      <p class="TodoSectionTitle-RemainingCount"> <%=todos.completed.count%>/<%= todos.count%></p>
+   </div>
+   <ul>
+      <% todos.all.each do |todo|%>
+         <%if !todo.overdue?%>
+            <label class="TodoItem-Container">
+               <%=form_with(url: "/todos/#{todo.id}", method: "put")do%>
+                  <li class="TodoItem">
+                     <%=check_box_tag(
+                        name= "completed",
+                        value= "1",
+                        checked = todo.completed,
+                        options = { onclick: "this.form.submit()",
+                        class: "TodoItem-Checkbox"})
+                     %>
+               <%end%>
+                  <div <%if todo.todo_status%>class="TodoItem-Line-through"<%end%>>
+                     <%= todo.todo_text %>
+                  </div>
+                     <%if show_due_date %>
+                        <p class="TodoItem-due_date"><%= todo.due_date.to_s(:short)%></p>
+                     <% end %>
+                        <a class="TodoItem-delete" href="javascript:">
+                           <%= form_with(url: "/todos/#{todo.id}",method: "delete") do %>
 
-
-        </div>
-     </li>
-
-    <% end %>
-  </ul>
+                            <% end %>
+                        </a>
+                  </li>
+            </label>
+         <%end%>
+      <%end%>
+   </ul>
 </section>
