@@ -1,36 +1,41 @@
 <section class=TodoSection>
    <div class="TodoSectionTitle">
-      <p class="TodoSectionTitle-text"> <%= section_title %>  </p>
-      <p class="TodoSectionTitle-RemainingCount"> <%=todos.completed.count%>/<%= todos.count%></p>
+      <p class="TodoSectionTitle-text">
+         <%= section_title %>
+      </p>
+      <p class="TodoSectionTitle-RemainingCount">
+         <%= todos.completed.count %>/<%= todos.count %>
+      </p>
    </div>
    <ul>
-      <% todos.all.each do |todo|%>
-         <%if !todo.overdue?%>
+      <% todos.all.each do |todo| %>
+         <% if !todo.overdue? %>
             <label class="TodoItem-Container">
-               <%=form_with(url: "/todos/#{todo.id}", method: "put")do%>
+               <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
                   <li class="TodoItem">
-                     <%=check_box_tag(
-                        name= "completed",
-                        value= "1",
-                        checked = todo.completed,
-                        options = { onclick: "this.form.submit()",
-                        class: "TodoItem-Checkbox"})
+                     <%= check_box_tag(name= "completed",
+                                       value= "1",
+                                       checked = todo.completed,
+                                       options = { onclick: "this.form.submit()",
+                                       class: "TodoItem-Checkbox"})
                      %>
-               <%end%>
-                  <div <%if todo.todo_status%>class="TodoItem-Line-through"<%end%>>
+               <% end %>
+                  <div <% if todo.todo_status %> class="TodoItem-Line-through"<% end %>>
                      <%= todo.todo_text %>
                   </div>
-                     <%if show_due_date %>
-                        <p class="TodoItem-due_date"><%= todo.due_date.to_s(:short)%></p>
+                     <% if show_due_date %>
+                        <p class="TodoItem-due_date">
+                           <%= todo.due_date.to_s(:short) %>
+                        </p>
                      <% end %>
                         <a class="TodoItem-delete" href="javascript:">
                            <%= form_with(url: "/todos/#{todo.id}",method: "delete") do %>
 
-                            <% end %>
+                           <% end %>
                         </a>
                   </li>
             </label>
-         <%end%>
-      <%end%>
+         <% end %>
+      <% end %>
    </ul>
 </section>

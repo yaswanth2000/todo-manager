@@ -30,4 +30,8 @@ class TodosController <ApplicationController
     render plain: "updated todo completed status to #{completed}"
 
   end
+  def destroy
+    Todo.of_user(current_user).find(params[:id]).destroy
+    redirect_to todos_path
+  end
 end
