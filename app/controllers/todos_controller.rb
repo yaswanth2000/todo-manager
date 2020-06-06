@@ -1,5 +1,5 @@
 class TodosController <ApplicationController
-  skip_before_action :verify_authenticity_token
+
   def index
     #render plain: Todo.order(:overdue).map {|todo| todo.to_pleasant_string }.join("\n")
     render "index"
@@ -30,7 +30,9 @@ class TodosController <ApplicationController
 
   end
   def destroy
-    Todo.of_user(current_user).find(params[:id]).destroy
+    id = params[:id]
+    todo = Todo.find(id)
+    todo.destroy
     redirect_to todos_path
   end
 end

@@ -31,7 +31,7 @@
                      <% end %>
                         <a class="TodoItem-delete" href="javascript:">
                            <%= form_with(url: "/todos/#{todo.id}",method: "delete") do %>
-
+                              <input type="image" src="trash.png" alt="trash" width="8.6" height="12.2">
                            <% end %>
                         </a>
                   </li>
