@@ -1,7 +1,7 @@
  <main class="TodoPageMain">
    <article>
       <h1 class="TodoPage-title"> My Todo List </h1>
-      <%= form_with(url: "/todos", method: "post", class: "AddTodo") do %>
+      <%= form_with(url: "/todos", method: "post", class: "AddTodo", local: true) do %>
          <%= text_field_tag( name='todo_text',
                              value=nil,
                              class:"AddTodo-text",

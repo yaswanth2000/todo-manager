@@ -12,6 +12,7 @@
          <% if !todo.overdue? %>
             <label class="TodoItem-Container">
                <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
+
                   <li class="TodoItem">
                      <%= check_box_tag(name= "completed",
                                        value= "1",
